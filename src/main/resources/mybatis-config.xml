@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--settings包含很多重要的设置项
+     setting用来设置每一个设置项
+     name：设置项名
+     value：设置项取值-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/><!--见到下划线去掉并改下划线后的字母为大写，解决数据库和java命名冲突的问题-->
+        <setting name="lazyLoadingEnabled" value="true"></setting><!--开启延迟加载，用到的时候才加载-->
+        <setting name="aggressiveLazyLoading" value="false"></setting>
+    </settings>
+
+    <!--typeAliases:别名处理器，可以为我们的java类起别名-->
+    <typeAliases>
+        <!--typeAliases为某个类型起别名
+            type：指定要起别名的类型全类名，默认别名就是类名小写，alias：指定新名-->
+        <!-- <typeAlias type="com.yg.mybatis.pojo.Employee" alias="emp"/>-->
+        <!--package：为某个包下的所有类批量起别名，默认名为类名小写
+            name：指定包名-->
+        <package name="com.yg.pojo"/>
+        <!--为防止包下两个类名冲突，用@Alias("emp")指定别名-->
+    </typeAliases>
+
+
+</configuration>
